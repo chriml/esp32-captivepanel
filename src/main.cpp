@@ -1,26 +1,33 @@
-#include <CaptiveServer.h>
+#include <WiFi.h>
+#include "CaptivePortal.h"
 
-CaptivePanelServer CaptivePanelServer;
+// Define the input fields for the form
+InputField fields[] = {
+    {"Device Name", "device_name", "text", "ESP32", ""},
+    {"WiFi SSID", "wifi_ssid", "text", "", ""},
+    {"WiFi Password", "wifi_password", "text", "", ""},
+    {"Mode", "mode", "select", "station", "station,access_point"}};
 
-void setup() {
+const int fieldCount = sizeof(fields) / sizeof(fields[0]);
+
+CaptivePortal portal("ESP32-Captive-Portal", "12345678", fields, fieldCount);
+
+void setup()
+{
     Serial.begin(115200);
-    
-    // Initialize WiFi Manager
-    CaptivePanelServer.begin("ESP32_AP", "password123");
-
-    // Attempt to connect automatically
-    if (!CaptivePanelServer.autoConnect()) {
-        Serial.println("Failed to connect automatically. Please configure WiFi through the AP.");
-    } else {
-        Serial.println("Connected to WiFi!");
+    while (!Serial)
+    {
+        delay(10);
     }
+    delay(1000);
+
+    portal.begin();
+    Serial.println("ESP32 Captive Sportal avalable");
 }
 
-void loop() {
-    // Handle clients (required when in AP mode)
-    CaptivePanelServer.handleClient();
-
-    if (CaptivePanelServer.isConnected()) {
-        // Your main code here
-    }
+void loop()
+{
+    // check for dns server requests
+    portal.loop();
+    delay(10);
 }

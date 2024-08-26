@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.tpl": "smarty",
+        "*.webc": "html",
+        "functional": "cpp"
+    }
+}
