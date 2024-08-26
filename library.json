@@ -1,21 +1,26 @@
 {
-    "name": "ESP32WiFiManager",
+    "name": "ESP32CaptivePortal",
     "version": "1.0.0",
     "description": "A simple WiFi Manager for ESP32, allowing auto-connect or manual configuration via a web interface.",
     "keywords": "wifi, esp32, manager, access point, ap",
     "repository": {
       "type": "git",
-      "url": "https://github.com/yourusername/ESP32-WiFiManager.git"
+      "url": "https://github.com/yourusername/ESP32-CaptivePortal.git"
     },
     "authors": [
       {
-        "name": "Your Name",
-        "email": "your.email@example.com",
+        "name": "Christian Meinl",
+        "email": "cmeinl@tuta.io",
         "maintainer": true
       }
     ],
     "frameworks": "arduino",
     "platforms": "espressif32",
-    "examples": "examples/*"
+    "examples": "examples/*",
+    "dependencies": [
+    {
+      "name": "ESPAsyncWebServer"
+    }
+  ]
   }
   
