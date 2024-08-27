@@ -1,26 +1,96 @@
 {
-    "name": "ESP32CaptivePortal",
+    "name": "ESP32_WifiManager",
     "version": "1.0.0",
-    "description": "A simple WiFi Manager for ESP32, allowing auto-connect or manual configuration via a web interface.",
-    "keywords": "wifi, esp32, manager, access point, ap",
+    "description": "Generic captive portal ",
+    "keywords": "wifi,captive,wifimanager,webserver",
+    "homepage": "https://github.com/chriml/esp32-captivepanel",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/yourusername/ESP32-CaptivePortal.git"
+        "type": "git",
+        "url": "https://github.com/chriml/esp32-captivepanel.git"
     },
     "authors": [
-      {
-        "name": "Christian Meinl",
-        "email": "cmeinl@tuta.io",
-        "maintainer": true
-      }
+        {
+            "name": "Christian Meinl",
+            "maintainer": true
+        }
     ],
+    "license": "MIT",
     "frameworks": "arduino",
-    "platforms": "espressif32",
-    "examples": "examples/*",
+    "platforms": [
+        "espressif32",
+        "espressif8266",
+        "raspberrypi"
+    ],
     "dependencies": [
-    {
-      "name": "ESPAsyncWebServer"
+        {
+            "owner": "mathieucarbou",
+            "name": "AsyncTCP",
+            "version": "^3.2.4",
+            "platforms": "espressif32"
+        },
+        {
+            "owner": "esphome",
+            "name": "ESPAsyncTCP-esphome",
+            "version": "^2.0.0",
+            "platforms": "espressif8266"
+        },
+        {
+            "name": "Hash",
+            "platforms": "espressif8266"
+        },
+        {
+            "owner": "khoih-prog",
+            "name": "AsyncTCP_RP2040W",
+            "version": "^1.2.0",
+            "platforms": "raspberrypi"
+        },
+        {
+            "name": "WiFi",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "WebServer",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "DNSServer",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "WiFiClient",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "ESPmDNS",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "EEPROM",
+            "version": "*",
+            "platforms": "espressif32"
+        },
+        {
+            "name": "ESP Async WebServer",
+            "version": "*",
+            "platforms": "espressif32"
+        }
+    ],
+    "export": {
+        "include": [
+            "examples",
+            "src",
+            "library.json",
+            "library.properties",
+            "LICENSE",
+            "README.md"
+        ]
+    },
+    "build": {
+        "libCompatMode": "strict"
     }
-  ]
-  }
-  
+}
