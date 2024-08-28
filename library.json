@@ -53,9 +53,8 @@
             "platforms": "espressif32"
         },
         {
-            "name": "https://github.com/me-no-dev/ESPAsyncWebServer.git",
-            "version": "*",
-            "platforms": "espressif32"
+            "name": "ESPAsyncWebServer",
+            "version": "https://github.com/me-no-dev/ESPAsyncWebServer.git"
         }
     ],
     "export": {

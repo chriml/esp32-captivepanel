@@ -1,6 +1,3 @@
-#ifndef CAPTIVEPORTAL_H
-#define CAPTIVEPORTAL_H
-
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
 #include <DNSServer.h>
@@ -35,5 +32,3 @@ private:
     void handleSubmitRequest(AsyncWebServerRequest *request);
     void handleNotFound(AsyncWebServerRequest *request);
 };
-
-#endif // CAPTIVEPORTAL_H
