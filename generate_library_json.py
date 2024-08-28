@@ -27,7 +27,7 @@ library_data = {
         "raspberrypi"
     ],
     "dependencies": [
-        {
+        """ {
             "owner": "mathieucarbou",
             "name": "AsyncTCP",
             "version": "^3.2.4",
@@ -48,7 +48,7 @@ library_data = {
             "name": "AsyncTCP_RP2040W",
             "version": "^1.2.0",
             "platforms": "raspberrypi"
-        }
+        } """
     ],
     "export": {
         "include": [
