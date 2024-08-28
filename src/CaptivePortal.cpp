@@ -131,3 +131,15 @@ void CaptivePortal::handleSubmitRequest(AsyncWebServerRequest *request)
 
     request->send(200, "text/html", response);
 }
+
+
+String CaptivePortal::getField(char *field)
+{
+    return preferences.getString(field);
+}
+
+void CaptivePortal::setField(char *field, String value)
+{
+    preferences.putString(field, value);
+}
+

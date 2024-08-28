@@ -17,6 +17,8 @@ public:
     CaptivePortal(const char *ssid, const char *password, InputField *fields, int fieldCount);
     void begin();
     void loop();
+    String getField(char *field);
+    void setField(char *field, String value);
 
 private:
     const char *_ssid;
