@@ -54,7 +54,8 @@
         },
         {
             "name": "ESPAsyncWebServer",
-            "version": "https://github.com/me-no-dev/ESPAsyncWebServer.git"
+            "version": "https://github.com/me-no-dev/ESPAsyncWebServer.git",
+            "platforms": "espressif32"
         }
     ],
     "export": {
@@ -68,7 +69,6 @@
         ]
     },
     "build": {
-         "libLDFMode": "deep",
         "libCompatMode": "strict"
     }
 }

@@ -89,9 +89,15 @@ def parse_platformio_ini(file_path):
             for dep in dependencies:
                 dep = dep.strip()
                 if dep:
+                    name = dep
+                    version = "*"
+                    if dep.endswith('.git'):
+                        name = dep.split('/')[-1].replace('.git', '')
+                        version = dep
+                        
                     library_data['dependencies'].append({
-                        "name": dep,
-                        "version": "*",  # Use * or specify a version if needed
+                        "name": name,
+                        "version": version,  # Use * or specify a version if needed
                         "platforms": "espressif32"  # Adjust if needed
                     })
 
